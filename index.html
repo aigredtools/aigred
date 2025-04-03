@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIGrid - Servicios de Inteligencia Artificial</title>
+    <meta name="description" content="Descubre las mejores herramientas de IA en un solo lugar. Potencia tu creatividad, productividad y resultados con AIGrid.">
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- GSAP para animaciones -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Configuración de Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neon-blue': '#00FFFF',
+                        'dark-blue': '#001F3F',
+                        'black': '#121212',
+                        'electric-green': '#00FF7F',
+                        'tech-purple': '#7D3C98',
+                    },
+                    fontFamily: {
+                        'exo': ['Exo 2', 'sans-serif'],
+                        'orbitron': ['Orbitron', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilos personalizados */
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #00FFFF, #00FF7F);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .neon-border {
+            border: 1px solid #00FFFF;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+            background: rgba(0, 31, 63, 0.7);
+            border: 1px solid rgba(0, 255, 255, 0.1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+            border: 1px solid rgba(0, 255, 255, 0.5);
+        }
+        
+        .cta-button {
+            background: linear-gradient(90deg, #00FFFF, #00FF7F);
+            color: #121212;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+        }
+        
+        /* Animación de partículas para el fondo */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        /* Estilo para el FAQ */
+        .faq-item {
+            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Partículas de fondo -->
+    <div class="particles" id="particles-js"></div>
+
+    <!-- Header Fijo -->
+    <header class="fixed top-0 left-0 w-full bg-black bg-opacity-80 backdrop-blur-md z-50 py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="#" class="text-2xl font-orbitron font-bold">
+                    <span class="text-neon-blue">AI</span><span class="text-electric-green">Grid</span>
+                </a>
+            </div>
+            
+            <!-- Menú de navegación para escritorio -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#inicio" class="text-white hover:text-neon-blue transition-colors font-montserrat">Inicio</a>
+                <a href="#servicios" class="text-white hover:text-neon-blue transition-colors font-montserrat">Servicios</a>
+                <a href="#beneficios" class="text-white hover:text-neon-blue transition-colors font-montserrat">Beneficios</a>
+                <a href="#testimonios" class="text-white hover:text-neon-blue transition-colors font-montserrat">Testimonios</a>
+                <a href="https://wa.me/51959149777?text=Hola,%20necesito%20soporte%20en%20AIGrid" class="text-white hover:text-neon-blue transition-colors font-montserrat">Contacto</a>
+                <a href="#contacto" class="cta-button px-6 py-2 rounded-full ml-4">Explorar Servicios</a>
+            </nav>
+            
+            <!-- Menú hamburguesa para móvil -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Menú móvil desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-blue bg-opacity-95 w-full absolute top-full left-0 py-4 px-4">
+            <nav class="flex flex-col space-y-4">
+                <a href="#inicio" class="text-white hover:text-neon-blue transition-colors font-montserrat">Inicio</a>
+                <a href="#servicios" class="text-white hover:text-neon-blue transition-colors font-montserrat">Servicios</a>
+                <a href="#beneficios" class="text-white hover:text-neon-blue transition-colors font-montserrat">Beneficios</a>
+                <a href="#testimonios" class="text-white hover:text-neon-blue transition-colors font-montserrat">Testimonios</a>
+                <a href="https://wa.me/51959149777?text=Hola,%20necesito%20soporte%20en%20AIGrid" class="text-white hover:text-neon-blue transition-colors font-montserrat">Contacto</a>
+                <a href="#contacto" class="cta-button px-6 py-2 rounded-full text-center">Explorar Servicios</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-32 pb-20 relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-orbitron mb-6">
+                        Descubre las Mejores <span class="gradient-text">Herramientas de IA</span> en un Solo Lugar
+                    </h1>
+                    <p class="text-xl mb-8 text-gray-300 font-montserrat">
+                        Potencia tu creatividad, productividad y resultados usando herramientas avanzadas de inteligencia artificial.
+                    </p>
+                    <div class="bg-dark-blue bg-opacity-70 p-4 rounded-lg neon-border mb-8">
+                        <p class="text-neon-blue font-medium">
+                            <i class="fas fa-bolt mr-2"></i> Recibe acceso inmediato en AdsPower con perfiles listos para trabajar desde el primer minuto.
+                        </p>
+                    </div>
+                    <a href="#contacto" class="cta-button px-8 py-3 rounded-full inline-block text-lg font-exo">
+                        <i class="fas fa-rocket mr-2"></i> Comienza Ahora
+                    </a>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <!-- Imagen Hero con efecto de brillo -->
+                    <div class="relative">
+                        <div class="absolute -inset-0.5 bg-gradient-to-r from-neon-blue to-electric-green rounded-lg blur opacity-75"></div>
+                        <img src="assets/images/hero-image.svg" alt="AIGrid Herramientas IA" class="relative rounded-lg w-full h-auto z-10">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Elementos decorativos -->
+        <div class="absolute top-1/4 left-10 w-20 h-20 bg-neon-blue rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
+        <div class="absolute bottom-1/4 right-10 w-32 h-32 bg-electric-green rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
+    </section>
+
+    <!-- Sección de Servicios -->
+    <section id="servicios" class="py-20 bg-gradient-to-b from-black to-dark-blue relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-orbitron mb-4">
+                    Nuestros <span class="gradient-text">Servicios Premium</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto font-montserrat">
+                    Accede a las herramientas de IA más potentes del mercado, todas en un único lugar y listas para usar.
+                </p>
+                <div class="bg-dark-blue bg-opacity-70 p-4 rounded-lg neon-border mt-8 max-w-3xl mx-auto">
+                    <p class="text-neon-blue font-medium text-lg">
+                        <i class="fas fa-star-of-life mr-2"></i> <span class="gradient-text font-bold">TODAS LAS INTELIGENCIAS ARTIFICIALES EN UN SOLO PAQUETE</span> - Acceso completo a todas las herramientas premium por un precio único.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Grid de Servicios -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Servicio 1 -->
+                <div class="service-card rounded-xl p-6 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-4">
+                        <i class="fas fa-robot text-black text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 font-exo">Blackbox AI</h3>
+                    <p class="text-gray-300">Transforma la forma en que los desarrolladores escriben, depuran y optimizan código, enfocándose en la eficiencia y precisión al eliminar tareas repetitivas y mejorar el proceso creativo de programación.</p>
+                </div>
+                
+                <!-- Servicio 2 -->
+                <div class="service-card rounded-xl p-6 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-4">
+                        <i class="fas fa-image text-black text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 font-exo">Midjourney Web</h3>
+                    <p class="text-gray-300">Laboratorio de investigación independiente que explora nuevos medios de pensamiento y expande los poderes imaginativos de la humanidad, conocido por su programa de inteligencia artificial generativa que crea imágenes a partir de descripciones textuales.</p>
+                </div>
+                
+                <!-- Servicio 3 -->
+                <div class="service-card rounded-xl p-6 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-4">
+                        <i class="fas fa-video text-black text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 font-exo">Hailuo Video AI</h3>
+                    <p class="text-gray-300">Herramienta innovadora que permite transformar ideas en videos impresionantes mediante inteligencia artificial, facilitando la creación de contenido visual atractivo de manera eficiente.</p>
+                </div>
+                
+                <!-- Servicio 4 -->
+                <div class="service-card rounded-xl p-6 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-4">
+                        <i class="fas fa-cut text-black text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 font-exo">CapCut Pro</h3>
+                    <p class="text-gray-300">Editor de video avanzado para PC que ofrece herramientas de creación de video básicas, avanzadas y basadas en IA, permitiendo ediciones de calidad de estudio de manera sencilla.</p>
+                </div>
+                
+                <!-- Servicio 5 -->
+                <div class="service-card rounded-xl p-6 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-4">
+                        <i class="fas fa-music text-black text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 font-exo">Fish Audio</h3>
+                    <p class="text-gray-300">Solución de texto a voz potente, rápida y personalizable que ofrece clonación de voz de baja latencia y precios fijos para locuciones con inteligencia artificial.</p>
+                </div>
+                
+                <!-- Servicio 6 -->
+                <div class="service-card rounded-xl p-6 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-4">
+                        <i class="fas fa-comment-dots text-black text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 font-exo">Chat GPT</h3>
+                    <p class="text-gray-300">Modelo de lenguaje desarrollado por OpenAI que permite mantener conversaciones naturales y generar texto coherente en función de las entradas proporcionadas por el usuario.</p>
+                </div>
+                
+                <!-- Servicio 7 -->
+                <div class="service-card rounded-xl p-6 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-4">
+                        <i class="fas fa-cogs text-black text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 font-exo">Operator AI</h3>
+                    <p class="text-gray-300">Agente de inteligencia artificial de OpenAI que puede interactuar con páginas web para realizar tareas como completar formularios, realizar pedidos y navegar por interfaces gráficas de usuario de manera autónoma.</p>
+                </div>
+                
+                <!-- Servicio 8 -->
+                <div class="service-card rounded-xl p-6 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-4">
+                        <i class="fas fa-film text-black text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 font-exo">Sora</h3>
+                    <p class="text-gray-300">Modelo de generación de video de OpenAI diseñado para tomar entradas de texto, imagen y video y generar un nuevo video como salida, facilitando la creación de contenido audiovisual a partir de descripciones textuales.</p>
+                </div>
+                
+                <!-- Ver más servicios (botón) -->
+                <div class="col-span-1 sm:col-span-2 lg:col-span-3 xl:col-span-4 text-center mt-8">
+                    <button id="ver-mas-servicios" class="bg-dark-blue hover:bg-opacity-80 text-neon-blue border border-neon-blue px-6 py-3 rounded-full transition-all">
+                        <i class="fas fa-plus-circle mr-2"></i> Ver Todos los Servicios
+                    </button>
+                </div>
+                
+                <!-- Servicios adicionales (inicialmente ocultos) -->
+                <div id="servicios-adicionales" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 col-span-1 sm:col-span-2 lg:col-span-3 xl:col-span-4">
+                    <!-- Servicio 9 -->
+                    <div class="service-card rounded-xl p-6 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-4">
+                            <i class="fas fa-file-powerpoint text-black text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 font-exo">SlideShare</h3>
+                        <p class="text-gray-300">Plataforma en línea que permite a los usuarios compartir y descubrir presentaciones y otros contenidos profesionales, facilitando la difusión de información y conocimientos.</p>
+                    </div>
+                    
+                    <!-- Servicio 10 -->
+                    <div class="service-card rounded-xl p-6 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-4">
+                            <i class="fas fa-magic text-black text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 font-exo">Runway ML</h3>
+                        <p class="text-gray-300">Empresa de investigación aplicada que desarrolla herramientas avanzadas de inteligencia artificial para la creación y edición de imágenes y videos, acercando la brecha entre la idea y la ejecución creativa.</p>
+                    </div>
+                    
+                    <!-- Servicio 11 -->
+                    <div class="service-card rounded-xl p-6 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-4">
+                            <i class="fas fa-paint-brush text-black text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 font-exo">Renderforest AI</h3>
+                        <p class="text-gray-300">Plataforma que ofrece herramientas de diseño basadas en inteligencia artificial, permitiendo a los usuarios crear videos animados, sitios web y otros contenidos visuales de manera sencilla y profesional.</p>
+                    </div>
+                    
+                    <!-- Servicio 12 -->
+                    <div class="service-card rounded-xl p-6 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-4">
+                            <i class="fas fa-images text-black text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 font-exo">Freepik</h3>
+                        <p class="text-gray-300">Recurso en línea que proporciona vectores, ilustraciones y fotos de alta calidad para proyectos creativos, facilitando el acceso a recursos gráficos para diseñadores y creadores de contenido.</p>
+                    </div>
+                    
+                    <!-- Servicio 13 -->
+                    <div class="service-card rounded-xl p-6 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-4">
+                            <i class="fas fa-object-group text-black text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 font-exo">PlaceIt by Envato</h3>
+                        <p class="text-gray-300">Herramienta en línea que permite crear maquetas, logotipos, videos y diseños profesionales de manera sencilla, ofreciendo una amplia biblioteca de plantillas personalizables.</p>
+                    </div>
+                    
+                    <!-- Servicio 14 -->
+                    <div class="service-card rounded-xl p-6 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-4">
+                            <i class="fas fa-podcast text-black text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 font-exo">Adobe Podcast</h3>
+                        <p class="text-gray-300">Plataforma basada en inteligencia artificial que ofrece herramientas para la grabación y edición de audio, permitiendo crear podcasts y locuciones de alta calidad directamente desde la web.</p>
+                    </div>
+                    
+                    <!-- Servicio 15 -->
+                    <div class="service-card rounded-xl p-6 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-4">
+                            <i class="fas fa-palette text-black text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 font-exo">Leonardo AI</h3>
+                        <p class="text-gray-300">Herramienta de generación de imágenes impulsada por inteligencia artificial que permite a los usuarios crear arte y contenido visual de manera rápida y sencilla, adecuada para entusiastas creativos.</p>
+                    </div>
+                    
+                    <!-- Servicio 16 -->
+                    <div class="service-card rounded-xl p-6 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-4">
+                            <i class="fas fa-film text-black text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 font-exo">Clipchamp</h3>
+                        <p class="text-gray-300">Editor de video en línea que ofrece herramientas de edición fáciles de usar, permitiendo a los usuarios crear y compartir videos de calidad profesional sin necesidad de software complejo.</p>
+                    </div>
+                    
+                    <!-- Servicio 17 -->
+                    <div class="service-card rounded-xl p-6 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-4">
+                            <i class="fas fa-box-open text-black text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 font-exo">Envato Elements</h3>
+                        <p class="text-gray-300">Suscripción que proporciona acceso ilimitado a una amplia gama de activos digitales, incluyendo gráficos, plantillas, fotos y más, para proyectos creativos.</p>
+                    </div>
+                    
+                    <!-- Servicio 18 -->
+                    <div class="service-card rounded-xl p-6 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-4">
+                            <i class="fas fa-user-tie text-black text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 font-exo">HeyGen</h3>
+                        <p class="text-gray-300">Plataforma de generación de videos impulsada por inteligencia artificial que permite crear contenido de video personalizado y atractivo de manera eficiente.</p>
+                    </div>
+                    
+                    <!-- Servicio 19 -->
+                    <div class="service-card rounded-xl p-6 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-4">
+                            <i class="fas fa-icons text-black text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 font-exo">Flaticon</h3>
+                        <p class="text-gray-300">Recurso en línea que ofrece una amplia colección de iconos y pegatinas en formato vectorial, útiles para proyectos de diseño y desarrollo web.</p>
+                    </div>
+                    
+                    <!-- Servicio 20 -->
+                    <div class="service-card rounded-xl p-6 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-4">
+                            <i class="fas fa-brain text-black text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 font-exo">Ideogram AI</h3>
+                        <p class="text-gray-300">Herramienta que utiliza inteligencia artificial para generar y analizar ideogramas y símbolos visuales, facilitando la creación de representaciones gráficas de conceptos.</p>
+                    </div>
+                    
+                    <!-- Servicio 21 -->
+                    <div class="service-card rounded-xl p-6 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-4">
+                            <i class="fas fa-vector-square text-black text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 font-exo">Vecteezy</h3>
+                        <p class="text-gray-300">Plataforma que proporciona vectores, fotos y videos de stock gratuitos y de alta calidad para proyectos creativos.</p>
+                    </div>
+                    
+                    <!-- Servicio 22 -->
+                    <div class="service-card rounded-xl p-6 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-4">
+                            <i class="fas fa-search text-black text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 font-exo">Spyhorus</h3>
+                        <p class="text-gray-300">Herramienta de análisis que permite a los usuarios monitorear y analizar el rendimiento de campañas publicitarias y estrategias de marketing en línea.</p>
+                    </div>
+                    
+                    <!-- Servicio 23 -->
+                    <div class="service-card rounded-xl p-6 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-4">
+                            <i class="fab fa-youtube text-black text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 font-exo">VidIQ</h3>
+                        <p class="text-gray-300">Extensión y plataforma que ayuda a los creadores de contenido de YouTube a optimizar sus videos y canales para mejorar el alcance y la visibilidad.</p>
+                    </div>
+                    
+                    <!-- Servicio 24 -->
+                    <div class="service-card rounded-xl p-6 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-4">
+                            <i class="fas fa-ad text-black text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 font-exo">Adsparo</h3>
+                        <p class="text-gray-300">Herramienta de gestión y optimización de campañas publicitarias en línea, diseñada para mejorar el rendimiento y el retorno de inversión en publicidad digital.</p>
+                    </div>
+                    
+                    <!-- Servicio 25 -->
+                    <div class="service-card rounded-xl p-6 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-4">
+                            <i class="fas fa-photo-video text-black text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 font-exo">MotionArray</h3>
+                        <p class="text-gray-300">Plataforma que ofrece plantillas de video, música, efectos de sonido y otros recursos para editores de video y creadores de contenido.</p>
+                    </div>
+                    
+                    <!-- Servicio 26 -->
+                    <div class="service-card rounded-xl p-6 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-4">
+                            <i class="fas fa-layer-group text-black text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 font-exo">Editor Pack + Plantillas</h3>
+                        <p class="text-gray-300">Conjunto de herramientas y plantillas diseñadas para facilitar la edición de contenido digital, incluyendo videos, gráficos y más.</p>
+                    </div>
+                    
+                    <!-- Servicio 27 -->
+                    <div class="service-card rounded-xl p-6 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-4">
+                            <i class="fas fa-music text-black text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 font-exo">Musicfy IA</h3>
+                        <p class="text-gray-300">Plataforma impulsada por inteligencia artificial que permite a los usuarios crear música utilizando su propia voz o la de otros, facilitando la generación de canciones de manera innovadora.</p>
+                    </div>
+                    
+                    <!-- Servicio 28 -->
+                    <div class="service-card rounded-xl p-6 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-4">
+                            <i class="fas fa-image text-black text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 font-exo">Adobe Photoshop</h3>
+                        <p class="text-gray-300">Editor de imágenes desarrollado por Adobe Systems, ampliamente utilizado para el retoque fotográfico y la creación de gráficos. Ofrece una variedad de herramientas avanzadas para la manipulación y edición de imágenes.</p>
+                    </div>
+                    
+                    <!-- Servicio 29 -->
+                    <div class="service-card rounded-xl p-6 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-4">
+                            <i class="fas fa-paint-brush text-black text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 font-exo">Canva Pro</h3>
+                        <p class="text-gray-300">Versión premium de Canva que proporciona acceso ilimitado a contenido y herramientas de diseño premium, incluyendo funciones avanzadas como la programación de publicaciones en redes sociales y animaciones instantáneas.</p>
+                    </div>
+                    
+                    <!-- Servicio 30 -->
+                    <div class="service-card rounded-xl p-6 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-4">
+                            <i class="fas fa-file-pdf text-black text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 font-exo">Adobe Acrobat</h3>
+                        <p class="text-gray-300">Solución integral para trabajar con archivos PDF, que permite crear, editar, firmar y compartir documentos digitales de manera eficiente y profesional.</p>
+                    </div>
+            </div>
+        </div>
+        <!-- Elementos decorativos -->
+        <div class="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-black to-transparent"></div>
+    </section>
+
+    <!-- Sección Especial AdsPower -->
+    <section id="adspower" class="py-20 relative">
+        <div class="container mx-auto px-4">
+            <div class="bg-dark-blue bg-opacity-80 rounded-2xl p-8 md:p-12 relative overflow-hidden neon-border">
+                <!-- Efecto de brillo en las esquinas -->
+                <div class="absolute top-0 right-0 w-40 h-40 bg-neon-blue rounded-full filter blur-3xl opacity-20"></div>
+                <div class="absolute bottom-0 left-0 w-40 h-40 bg-electric-green rounded-full filter blur-3xl opacity-20"></div>
+                
+                <div class="relative z-10">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 mb-8 md:mb-0">
+                            <h2 class="text-3xl md:text-4xl font-bold font-orbitron mb-6">
+                                Acceso instantáneo y listo para trabajar con <span class="gradient-text">AdsPower</span>
+                            </h2>
+                            <p class="text-xl mb-8 text-gray-300 font-montserrat">
+                                Olvídate de instalaciones complejas y configuraciones tediosas. Al adquirir nuestros servicios, recibirás acceso directo en AdsPower, con todos los perfiles y herramientas listas y configuradas para comenzar inmediatamente. ¡Ahorra tiempo, dinero y esfuerzo!
+                            </p>
+                            
+                            <!-- Beneficios específicos -->
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <span class="text-electric-green mr-3 mt-1"><i class="fas fa-check-circle"></i></span>
+                                    <span class="text-gray-200">Sin instalaciones, configuración instantánea.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-electric-green mr-3 mt-1"><i class="fas fa-check-circle"></i></span>
+                                    <span class="text-gray-200">Ahorro inmediato de tiempo.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-electric-green mr-3 mt-1"><i class="fas fa-check-circle"></i></span>
+                                    <span class="text-gray-200">Optimización garantizada desde el primer día.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-electric-green mr-3 mt-1"><i class="fas fa-check-circle"></i></span>
+                                    <span class="text-gray-200">Seguridad y Privacidad para todos tus trabajos.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="md:w-1/2 md:pl-10">
+                            <!-- Imagen ilustrativa de AdsPower -->
+                            <div class="relative">
+                                <div class="absolute -inset-0.5 bg-gradient-to-r from-neon-blue to-electric-green rounded-lg blur opacity-75"></div>
+                                <img src="assets/images/adspower.svg" alt="AdsPower Interface" class="relative rounded-lg w-full h-auto z-10">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Beneficios Clave -->
+    <section id="beneficios" class="py-20 bg-black relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-orbitron mb-4">
+                    <span class="gradient-text">Beneficios</span> Exclusivos
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto font-montserrat">
+                    Descubre por qué nuestros servicios marcan la diferencia en el mundo de la IA.
+                </p>
+            </div>
+            
+            <!-- Grid de Beneficios -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Beneficio 1 -->
+                <div class="bg-dark-blue bg-opacity-50 rounded-xl p-8 transform transition-all hover:scale-105 hover:shadow-lg hover:shadow-neon-blue/20">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-infinity text-black text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center font-exo">Uso Ilimitado</h3>
+                    <p class="text-gray-300 text-center">
+                        Accede a todas nuestras herramientas de IA sin restricciones de uso, maximizando tu productividad.
+                    </p>
+                </div>
+                
+                <!-- Beneficio 2 -->
+                <div class="bg-dark-blue bg-opacity-50 rounded-xl p-8 transform transition-all hover:scale-105 hover:shadow-lg hover:shadow-neon-blue/20">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-crown text-black text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center font-exo">Herramientas Premium</h3>
+                    <p class="text-gray-300 text-center">
+                        Versiones completas y actualizadas de las mejores herramientas de IA del mercado.
+                    </p>
+                </div>
+                
+                <!-- Beneficio 3 -->
+                <div class="bg-dark-blue bg-opacity-50 rounded-xl p-8 transform transition-all hover:scale-105 hover:shadow-lg hover:shadow-neon-blue/20">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-door-open text-black text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center font-exo">Fácil Acceso</h3>
+                    <p class="text-gray-300 text-center">
+                        Soporte dedicado y acceso inmediato a todas las herramientas desde una única plataforma.
+                    </p>
+                </div>
+                
+                <!-- Beneficio 4 -->
+                <div class="bg-dark-blue bg-opacity-50 rounded-xl p-8 transform transition-all hover:scale-105 hover:shadow-lg hover:shadow-neon-blue/20">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-user-check text-black text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center font-exo">Perfiles Preconfigurados</h3>
+                    <p class="text-gray-300 text-center">
+                        Perfiles listos para usar en AdsPower, sin necesidad de configuraciones complejas.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Elementos decorativos -->
+        <div class="absolute top-1/3 right-10 w-24 h-24 bg-tech-purple rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
+        <div class="absolute bottom-1/3 left-10 w-32 h-32 bg-neon-blue rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
+    </section>
+
+    <!-- Sección de Testimonios -->
+    <section id="testimonios" class="py-20 bg-gradient-to-b from-dark-blue to-black relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-orbitron mb-4">
+                    Lo Que Dicen Nuestros <span class="gradient-text">Clientes</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto font-montserrat">
+                    Descubre cómo nuestras herramientas de IA han transformado el trabajo de profesionales como tú.
+                </p>
+            </div>
+            
+            <!-- Carrusel de Testimonios -->
+            <div class="testimonial-carousel relative">
+                <div class="flex overflow-x-hidden" id="testimonial-container">
+                    <!-- Testimonio 1 -->
+                    <div class="testimonial-slide min-w-full md:min-w-[50%] lg:min-w-[33.33%] p-4">
+                        <div class="bg-dark-blue bg-opacity-50 rounded-xl p-8 h-full">
+                            <div class="flex items-center mb-6">
+                                <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green p-0.5">
+                                    <div class="w-full h-full rounded-full overflow-hidden">
+                                        <img src="assets/images/testimonial-1.svg" alt="Cliente 1" class="w-full h-full object-cover">
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-xl font-bold font-exo">Carlos Rodríguez</h4>
+                                    <div class="flex text-yellow-400 mt-1">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-300 italic">
+                                "Desde que utilizo las herramientas de AIGrid, mi productividad se ha multiplicado. El acceso a través de AdsPower es increíblemente sencillo y todas las herramientas funcionan a la perfección desde el primer momento."
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonio 2 -->
+                    <div class="testimonial-slide min-w-full md:min-w-[50%] lg:min-w-[33.33%] p-4">
+                        <div class="bg-dark-blue bg-opacity-50 rounded-xl p-8 h-full">
+                            <div class="flex items-center mb-6">
+                                <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green p-0.5">
+                                    <div class="w-full h-full rounded-full overflow-hidden">
+                                        <img src="assets/images/testimonial-2.svg" alt="Cliente 2" class="w-full h-full object-cover">
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-xl font-bold font-exo">Laura Martínez</h4>
+                                    <div class="flex text-yellow-400 mt-1">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-300 italic">
+                                "La calidad de las herramientas de IA que ofrece AIGrid es excepcional. He podido crear contenido visual y escrito de alta calidad en tiempo récord. ¡Totalmente recomendado!"
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonio 3 -->
+                    <div class="testimonial-slide min-w-full md:min-w-[50%] lg:min-w-[33.33%] p-4">
+                        <div class="bg-dark-blue bg-opacity-50 rounded-xl p-8 h-full">
+                            <div class="flex items-center mb-6">
+                                <div class="w-16 h-16 rounded-full bg-gradient-to-r from-neon-blue to-electric-green p-0.5">
+                                    <div class="w-full h-full rounded-full overflow-hidden">
+                                        <img src="assets/images/testimonial-3.svg" alt="Cliente 3" class="w-full h-full object-cover">
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-xl font-bold font-exo">Miguel Sánchez</h4>
+                                    <div class="flex text-yellow-400 mt-1">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-300 italic">
+                                "El soporte técnico es excelente y las herramientas están siempre actualizadas. La facilidad de uso gracias a AdsPower hace que todo sea mucho más eficiente."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Controles del carrusel -->
+                <div class="flex justify-center mt-8 space-x-4">
+                    <button id="prev-testimonial" class="w-12 h-12 rounded-full bg-dark-blue border border-neon-blue flex items-center justify-center hover:bg-neon-blue hover:text-black transition-all">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button id="next-testimonial" class="w-12 h-12 rounded-full bg-dark-blue border border-neon-blue flex items-center justify-center hover:bg-neon-blue hover:text-black transition-all">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Elementos decorativos -->
+        <div class="absolute top-1/3 left-10 w-24 h-24 bg-tech-purple rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
+    </section>
+
+    <!-- Sección de Preguntas Frecuentes -->
+    <section id="faq" class="py-20 bg-black relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-orbitron mb-4">
+                    Preguntas <span class="gradient-text">Frecuentes</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto font-montserrat">
+                    Resolvemos tus dudas sobre nuestros servicios de IA.
+                </p>
+            </div>
+            
+            <!-- Lista de FAQs -->
+            <div class="max-w-3xl mx-auto">
+                <!-- Pregunta 1 -->
+                <div class="faq-item py-4 cursor-pointer">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-xl font-bold font-exo">¿Qué incluyen exactamente los servicios?</h3>
+                        <span class="faq-icon text-neon-blue text-2xl"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer mt-4 text-gray-300">
+                        <p>Nuestros servicios incluyen acceso completo a más de 40 herramientas premium de IA, entre ellas Blackbox AI, Midjourney Web, Chat GPT, Sora, Leonardo AI, Canva Pro, Adobe Suite y muchas más. Todas estas herramientas están configuradas y listas para usar a través de AdsPower, sin necesidad de instalaciones adicionales.</p>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 2 -->
+                <div class="faq-item py-4 cursor-pointer">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-xl font-bold font-exo">¿Cómo recibiré acceso a las herramientas?</h3>
+                        <span class="faq-icon text-neon-blue text-2xl"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer mt-4 text-gray-300">
+                        <p>Recibirás acceso inmediato mediante AdsPower, donde todas las herramientas y perfiles estarán configurados y listos para usar. Te enviaremos las credenciales de acceso y una guía detallada sobre cómo comenzar a utilizar cada herramienta.</p>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 3 -->
+                <div class="faq-item py-4 cursor-pointer">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-xl font-bold font-exo">¿Necesito suscripción mensual?</h3>
+                        <span class="faq-icon text-neon-blue text-2xl"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer mt-4 text-gray-300">
+                        <p>Ofrecemos diferentes planes de acceso, incluyendo opciones de pago único y suscripciones mensuales. Puedes elegir el que mejor se adapte a tus necesidades. Todos nuestros planes incluyen actualizaciones y soporte técnico.</p>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 4 -->
+                <div class="faq-item py-4 cursor-pointer">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-xl font-bold font-exo">¿Cuánto tiempo tengo acceso a las herramientas?</h3>
+                        <span class="faq-icon text-neon-blue text-2xl"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer mt-4 text-gray-300">
+                        <p>El tiempo de acceso depende del plan que elijas. Ofrecemos planes mensuales, trimestrales y anuales. Una vez finalizado el período, puedes renovar tu acceso o cancelarlo sin compromiso.</p>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 5 -->
+                <div class="faq-item py-4 cursor-pointer">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-xl font-bold font-exo">¿Qué pasa si necesito soporte técnico?</h3>
+                        <span class="faq-icon text-neon-blue text-2xl"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer mt-4 text-gray-300">
+                        <p>Ofrecemos soporte técnico prioritario a través de WhatsApp y correo electrónico. Nuestro equipo está disponible para ayudarte con cualquier duda o problema que puedas tener con las herramientas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Elementos decorativos -->
+        <div class="absolute bottom-1/4 right-10 w-32 h-32 bg-electric-green rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
+    </section>
+
+    <!-- Sección de Compra -->
+    <section id="contacto" class="py-20 bg-gradient-to-b from-black to-dark-blue relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-orbitron mb-4">
+                    <span class="gradient-text">Compra</span> Ahora
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto font-montserrat">
+                    Adquiere acceso inmediato a nuestras herramientas premium de IA y potencia tu trabajo.
+                </p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-10">
+                <!-- Opciones de Compra -->
+                <div class="md:w-1/2 bg-dark-blue bg-opacity-50 rounded-xl p-8 transform transition-all duration-300 hover:scale-105">
+                    <div class="text-center mb-8">
+                        <div class="w-20 h-20 rounded-full bg-gradient-to-r from-neon-blue to-electric-green flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-credit-card text-black text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2 font-exo">Pago Rápido</h3>
+                        <p class="text-gray-300 mb-6">Acceso inmediato con pago seguro online</p>
+                        <div class="bg-black bg-opacity-50 rounded-lg p-4 mb-6">
+                            <p class="text-xl font-bold text-electric-green mb-2">$29.99 USD</p>
+                            <p class="text-sm text-gray-300">Pago mensual - Acceso a TODAS las herramientas de IA</p>
+                            <p class="text-sm text-neon-blue mt-2"><i class="fas fa-check-circle mr-1"></i> Todas las inteligencias artificiales en un solo paquete</p>
+                        </div>
+                    </div>
+                    
+                    <a href="https://pay.example.com/aigrid" class="block w-full py-4 rounded-lg text-lg font-exo text-center relative overflow-hidden group">
+                        <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-gradient-to-r from-neon-blue to-electric-green group-hover:skew-x-12"></span>
+                        <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-gradient-to-r from-electric-green to-neon-blue group-hover:-skew-x-12"></span>
+                        <span class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-neon-blue -rotate-12"></span>
+                        <span class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-electric-green rotate-12"></span>
+                        <span class="relative text-black font-bold flex items-center justify-center">
+                            <i class="fas fa-lock mr-2"></i> COMPRAR AHORA
+                        </span>
+                    </a>
+                </div>
+                
+                <!-- Opción de WhatsApp -->
+                <div class="md:w-1/2 flex flex-col justify-center">
+                    <div class="bg-dark-blue bg-opacity-50 rounded-xl p-8 mb-8 transform transition-all duration-300 hover:scale-105">
+                        <div class="text-center mb-8">
+                            <div class="w-20 h-20 rounded-full bg-gradient-to-r from-neon-blue to-tech-purple flex items-center justify-center mx-auto mb-4">
+                                <i class="fab fa-whatsapp text-black text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2 font-exo">Compra por WhatsApp</h3>
+                            <p class="text-gray-300 mb-6">Negocia directamente y obtén atención personalizada</p>
+                        </div>
+                        
+                        <a href="https://wa.me/51959149777?text=Hola,%20estoy%20interesado%20en%20comprar%20AIGrid" class="block w-full py-4 rounded-lg text-lg font-exo text-center relative overflow-hidden group mb-6">
+                            <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-gradient-to-r from-green-500 to-green-400 group-hover:skew-x-12"></span>
+                            <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-gradient-to-r from-green-400 to-green-500 group-hover:-skew-x-12"></span>
+                            <span class="relative text-black font-bold flex items-center justify-center">
+                                <i class="fab fa-whatsapp mr-2"></i> NEGOCIAR POR WHATSAPP
+                            </span>
+                        </a>
+                        
+                        <div class="bg-black bg-opacity-50 rounded-lg p-4">
+                            <p class="text-sm text-gray-300 text-center">Respuesta inmediata en horario de atención</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-dark-blue bg-opacity-50 rounded-xl p-8">
+                        <h3 class="text-2xl font-bold mb-6 font-exo">Horario de Atención</h3>
+                        <p class="text-gray-300 mb-4">Nuestro equipo está disponible para ayudarte:</p>
+                        <ul class="space-y-2">
+                            <li class="flex justify-between">
+                                <span>Lunes a Domingo:</span>
+                                <span class="text-neon-blue">24/7 Soporte</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Elementos decorativos -->
+        <div class="absolute top-1/4 right-10 w-24 h-24 bg-neon-blue rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
+        <div class="absolute bottom-1/4 left-10 w-32 h-32 bg-tech-purple rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 relative">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <!-- Logo y descripción -->
+                <div>
+                    <a href="#" class="text-2xl font-orbitron font-bold inline-block mb-6">
+                        <span class="text-neon-blue">AI</span><span class="text-electric-green">Grid</span>
+                    </a>
+                    <p class="text-gray-400 mb-6">
+                        Potenciando tu creatividad y productividad con las mejores herramientas de IA en un solo lugar.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-dark-blue flex items-center justify-center hover:bg-neon-blue hover:text-black transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-dark-blue flex items-center justify-center hover:bg-neon-blue hover:text-black transition-all">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-dark-blue flex items-center justify-center hover:bg-neon-blue hover:text-black transition-all">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-dark-blue flex items-center justify-center hover:bg-neon-blue hover:text-black transition-all">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Enlaces rápidos -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 font-exo">Enlaces Rápidos</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#inicio" class="text-gray-400 hover:text-neon-blue transition-colors">Inicio</a></li>
+                        <li><a href="#servicios" class="text-gray-400 hover:text-neon-blue transition-colors">Servicios</a></li>
+                        <li><a href="#beneficios" class="text-gray-400 hover:text-neon-blue transition-colors">Beneficios</a></li>
+                        <li><a href="#testimonios" class="text-gray-400 hover:text-neon-blue transition-colors">Testimonios</a></li>
+                        <li><a href="#faq" class="text-gray-400 hover:text-neon-blue transition-colors">Preguntas Frecuentes</a></li>
+                        <li><a href="#contacto" class="text-gray-400 hover:text-neon-blue transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Servicios Destacados -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 font-exo">Servicios Destacados</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-neon-blue transition-colors">Blackbox AI</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-neon-blue transition-colors">Midjourney Web</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-neon-blue transition-colors">Chat GPT</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-neon-blue transition-colors">Sora</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-neon-blue transition-colors">Leonardo AI</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-neon-blue transition-colors">Adobe Suite</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Legal -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 font-exo">Legal</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-neon-blue transition-colors">Términos y Condiciones</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-neon-blue transition-colors">Política de Privacidad</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-neon-blue transition-colors">Política de Cookies</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-neon-blue transition-colors">Aviso Legal</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-center md:text-left mb-4 md:mb-0">
+                    &copy; 2025 AIGrid. Todos los derechos reservados.
+                </p>
+                <p class="text-gray-500 text-center md:text-right">
+                    Diseñado con <i class="fas fa-heart text-electric-green mx-1"></i> por AIGrid
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+        // Inicializar partículas de fondo
+        document.addEventListener('DOMContentLoaded', function() {
+            // Configuración de partículas
+            particlesJS("particles-js", {
+                particles: {
+                    number: { value: 80, density: { enable: true, value_area: 800 } },
+                    color: { value: "#00FFFF" },
+                    shape: { type: "circle" },
+                    opacity: { value: 0.1, random: true },
+                    size: { value: 3, random: true },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: "#00FFFF",
+                        opacity: 0.1,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 1,
+                        direction: "none",
+                        random: true,
+                        straight: false,
+                        out_mode: "out",
+                        bounce: false
+                    }
+                },
+                interactivity: {
+                    detect_on: "canvas",
+                    events: {
+                        onhover: { enable: true, mode: "grab" },
+                        onclick: { enable: true, mode: "push" },
+                        resize: true
+                    },
+                    modes: {
+                        grab: { distance: 140, line_linked: { opacity: 0.3 } },
+                        push: { particles_nb: 4 }
+                    }
+                },
+                retina_detect: true
+            });
+            
+            // Menú móvil
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Cerrar menú al hacer clic en un enlace
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+            
+            // Carrusel de testimonios
+            const testimonialContainer = document.getElementById('testimonial-container');
+            const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+            const prevButton = document.getElementById('prev-testimonial');
+            const nextButton = document.getElementById('next-testimonial');
+            
+            let currentIndex = 0;
+            const slideWidth = 100; // Porcentaje
+            
+            function updateCarousel() {
+                const offset = -currentIndex * slideWidth;
+                testimonialContainer.style.transform = `translateX(${offset}%)`;
+                testimonialContainer.style.transition = 'transform 0.5s ease';
+            }
+            
+            nextButton.addEventListener('click', function() {
+                if (currentIndex < testimonialSlides.length - 1) {
+                    currentIndex++;
+                } else {
+                    currentIndex = 0;
+                }
+                updateCarousel();
+            });
+            
+            prevButton.addEventListener('click', function() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                } else {
+                    currentIndex = testimonialSlides.length - 1;
+                }
+                updateCarousel();
+            });
+            
+            // Inicializar carrusel
+            updateCarousel();
+            
+            // Auto-rotación del carrusel
+            setInterval(() => {
+                if (currentIndex < testimonialSlides.length - 1) {
+                    currentIndex++;
+                } else {
+                    currentIndex = 0;
+                }
+                updateCarousel();
+            }, 5000);
+            
+            // FAQ Accordion
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.flex');
+                const answer = item.querySelector('.faq-answer');
+                const icon = item.querySelector('.faq-icon');
+                
+                question.addEventListener('click', () => {
+                    // Cerrar todos los otros items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                            otherItem.querySelector('.faq-icon').innerHTML = '<i class="fas fa-plus"></i>';
+                        }
+                    });
+                    
+                    // Abrir/cerrar el item actual
+                    item.classList.toggle('active');
+                    
+                    // Cambiar el icono
+                    if (item.classList.contains('active')) {
+                        icon.innerHTML = '<i class="fas fa-minus"></i>';
+                    } else {
+                        icon.innerHTML = '<i class="fas fa-plus"></i>';
+                    }
+                });
+            });
+        }
+    );
+    </script>
+    
+    <!-- Scripts personalizados -->
+    <script src="assets/js/servicios.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+  <!-- Scripts personalizados                          <p class="text-gray-300 italic">-->

@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <!-- Fondo con gradiente -->
+  <rect width="800" height="600" fill="#001F3F"/>
+  
+  <!-- Elementos decorativos de fondo -->
+  <circle cx="400" cy="300" r="250" fill="none" stroke="#00FFFF" stroke-width="1" opacity="0.2"/>
+  <circle cx="400" cy="300" r="200" fill="none" stroke="#00FFFF" stroke-width="1" opacity="0.3"/>
+  <circle cx="400" cy="300" r="150" fill="none" stroke="#00FFFF" stroke-width="1" opacity="0.4"/>
+  
+  <!-- Grid de puntos -->
+  <g opacity="0.3">
+    <circle cx="200" cy="150" r="2" fill="#00FFFF"/>
+    <circle cx="250" cy="150" r="2" fill="#00FFFF"/>
+    <circle cx="300" cy="150" r="2" fill="#00FFFF"/>
+    <circle cx="350" cy="150" r="2" fill="#00FFFF"/>
+    <circle cx="400" cy="150" r="2" fill="#00FFFF"/>
+    <circle cx="450" cy="150" r="2" fill="#00FFFF"/>
+    <circle cx="500" cy="150" r="2" fill="#00FFFF"/>
+    <circle cx="550" cy="150" r="2" fill="#00FFFF"/>
+    <circle cx="600" cy="150" r="2" fill="#00FFFF"/>
+    
+    <circle cx="200" cy="200" r="2" fill="#00FFFF"/>
+    <circle cx="250" cy="200" r="2" fill="#00FFFF"/>
+    <circle cx="300" cy="200" r="2" fill="#00FFFF"/>
+    <circle cx="350" cy="200" r="2" fill="#00FFFF"/>
+    <circle cx="400" cy="200" r="2" fill="#00FFFF"/>
+    <circle cx="450" cy="200" r="2" fill="#00FFFF"/>
+    <circle cx="500" cy="200" r="2" fill="#00FFFF"/>
+    <circle cx="550" cy="200" r="2" fill="#00FFFF"/>
+    <circle cx="600" cy="200" r="2" fill="#00FFFF"/>
+    
+    <circle cx="200" cy="250" r="2" fill="#00FFFF"/>
+    <circle cx="250" cy="250" r="2" fill="#00FFFF"/>
+    <circle cx="300" cy="250" r="2" fill="#00FFFF"/>
+    <circle cx="350" cy="250" r="2" fill="#00FFFF"/>
+    <circle cx="400" cy="250" r="2" fill="#00FFFF"/>
+    <circle cx="450" cy="250" r="2" fill="#00FFFF"/>
+    <circle cx="500" cy="250" r="2" fill="#00FFFF"/>
+    <circle cx="550" cy="250" r="2" fill="#00FFFF"/>
+    <circle cx="600" cy="250" r="2" fill="#00FFFF"/>
+    
+    <circle cx="200" cy="300" r="2" fill="#00FFFF"/>
+    <circle cx="250" cy="300" r="2" fill="#00FFFF"/>
+    <circle cx="300" cy="300" r="2" fill="#00FFFF"/>
+    <circle cx="350" cy="300" r="2" fill="#00FFFF"/>
+    <circle cx="400" cy="300" r="2" fill="#00FFFF"/>
+    <circle cx="450" cy="300" r="2" fill="#00FFFF"/>
+    <circle cx="500" cy="300" r="2" fill="#00FFFF"/>
+    <circle cx="550" cy="300" r="2" fill="#00FFFF"/>
+    <circle cx="600" cy="300" r="2" fill="#00FFFF"/>
+    
+    <circle cx="200" cy="350" r="2" fill="#00FFFF"/>
+    <circle cx="250" cy="350" r="2" fill="#00FFFF"/>
+    <circle cx="300" cy="350" r="2" fill="#00FFFF"/>
+    <circle cx="350" cy="350" r="2" fill="#00FFFF"/>
+    <circle cx="400" cy="350" r="2" fill="#00FFFF"/>
+    <circle cx="450" cy="350" r="2" fill="#00FFFF"/>
+    <circle cx="500" cy="350" r="2" fill="#00FFFF"/>
+    <circle cx="550" cy="350" r="2" fill="#00FFFF"/>
+    <circle cx="600" cy="350" r="2" fill="#00FFFF"/>
+    
+    <circle cx="200" cy="400" r="2" fill="#00FFFF"/>
+    <circle cx="250" cy="400" r="2" fill="#00FFFF"/>
+    <circle cx="300" cy="400" r="2" fill="#00FFFF"/>
+    <circle cx="350" cy="400" r="2" fill="#00FFFF"/>
+    <circle cx="400" cy="400" r="2" fill="#00FFFF"/>
+    <circle cx="450" cy="400" r="2" fill="#00FFFF"/>
+    <circle cx="500" cy="400" r="2" fill="#00FFFF"/>
+    <circle cx="550" cy="400" r="2" fill="#00FFFF"/>
+    <circle cx="600" cy="400" r="2" fill="#00FFFF"/>
+    
+    <circle cx="200" cy="450" r="2" fill="#00FFFF"/>
+    <circle cx="250" cy="450" r="2" fill="#00FFFF"/>
+    <circle cx="300" cy="450" r="2" fill="#00FFFF"/>
+    <circle cx="350" cy="450" r="2" fill="#00FFFF"/>
+    <circle cx="400" cy="450" r="2" fill="#00FFFF"/>
+    <circle cx="450" cy="450" r="2" fill="#00FFFF"/>
+    <circle cx="500" cy="450" r="2" fill="#00FFFF"/>
+    <circle cx="550" cy="450" r="2" fill="#00FFFF"/>
+    <circle cx="600" cy="450" r="2" fill="#00FFFF"/>
+  </g>
+  
+  <!-- Elementos de IA -->
+  <g transform="translate(400, 300)">
+    <!-- Cerebro digital -->
+    <circle cx="0" cy="0" r="80" fill="none" stroke="#00FF7F" stroke-width="2" opacity="0.8"/>
+    
+    <!-- Conexiones neuronales -->
+    <line x1="-60" y1="-60" x2="60" y2="60" stroke="#00FFFF" stroke-width="2" opacity="0.6"/>
+    <line x1="60" y1="-60" x2="-60" y2="60" stroke="#00FFFF" stroke-width="2" opacity="0.6"/>
+    <line x1="0" y1="-80" x2="0" y2="80" stroke="#00FFFF" stroke-width="2" opacity="0.6"/>
+    <line x1="-80" y1="0" x2="80" y2="0" stroke="#00FFFF" stroke-width="2" opacity="0.6"/>
+    
+    <!-- Nodos -->
+    <circle cx="-60" cy="-60" r="10" fill="#7D3C98" opacity="0.8"/>
+    <circle cx="60" cy="-60" r="10" fill="#00FFFF" opacity="0.8"/>
+    <circle cx="-60" cy="60" r="10" fill="#00FFFF" opacity="0.8"/>
+    <circle cx="60" cy="60" r="10" fill="#7D3C98" opacity="0.8"/>
+    <circle cx="0" cy="-80" r="10" fill="#00FF7F" opacity="0.8"/>
+    <circle cx="0" cy="80" r="10" fill="#00FF7F" opacity="0.8"/>
+    <circle cx="-80" cy="0" r="10" fill="#00FF7F" opacity="0.8"/>
+    <circle cx="80" cy="0" r="10" fill="#00FF7F" opacity="0.8"/>
+    
+    <!-- Pulsos de energía (animación simulada) -->
+    <circle cx="-30" cy="-30" r="5" fill="#FFFFFF" opacity="0.9">
+      <animate attributeName="cx" values="-60;60;60;-60;-60" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="-60;-60;60;60;-60" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="30" cy="30" r="5" fill="#FFFFFF" opacity="0.9">
+      <animate attributeName="cx" values="60;-60;-60;60;60" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="60;60;-60;-60;60" dur="4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Texto AI -->
+  <text x="400" y="500" font-family="'Orbitron', sans-serif" font-size="40" fill="#00FFFF" text-anchor="middle" font-weight="bold">INTELIGENCIA ARTIFICIAL</text>
+  
+  <!-- Destellos -->
+  <g>
+    <circle cx="200" cy="200" r="3" fill="#FFFFFF">
+      <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="600" cy="400" r="2" fill="#FFFFFF">
+      <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="450" r="2" fill="#FFFFFF">
+      <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="500" cy="150" r="2" fill="#FFFFFF">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <!-- Fondo con gradiente -->
+  <rect width="800" height="500" fill="#001F3F"/>
+  
+  <!-- Elementos decorativos de fondo -->
+  <g opacity="0.2">
+    <circle cx="100" cy="100" r="50" fill="#00FFFF"/>
+    <circle cx="700" cy="400" r="70" fill="#00FF7F"/>
+    <circle cx="200" cy="450" r="30" fill="#7D3C98"/>
+    <circle cx="600" cy="150" r="40" fill="#00FFFF"/>
+  </g>
+  
+  <!-- Grid de líneas -->
+  <g stroke="#00FFFF" stroke-width="0.5" opacity="0.2">
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+    
+    <line x1="100" y1="0" x2="100" y2="500"/>
+    <line x1="200" y1="0" x2="200" y2="500"/>
+    <line x1="300" y1="0" x2="300" y2="500"/>
+    <line x1="400" y1="0" x2="400" y2="500"/>
+    <line x1="500" y1="0" x2="500" y2="500"/>
+    <line x1="600" y1="0" x2="600" y2="500"/>
+    <line x1="700" y1="0" x2="700" y2="500"/>
+  </g>
+  
+  <!-- Interfaz de AdsPower -->
+  <g transform="translate(400, 250)">
+    <!-- Marco de la interfaz -->
+    <rect x="-200" y="-150" width="400" height="300" rx="10" ry="10" fill="#121212" stroke="#00FFFF" stroke-width="2"/>
+    
+    <!-- Barra superior -->
+    <rect x="-200" y="-150" width="400" height="40" rx="10" ry="10" fill="#00FFFF" opacity="0.8"/>
+    
+    <!-- Botones de la barra -->
+    <circle cx="-180" cy="-130" r="5" fill="#FF5F57"/>
+    <circle cx="-160" cy="-130" r="5" fill="#FFBD2E"/>
+    <circle cx="-140" cy="-130" r="5" fill="#28CA41"/>
+    
+    <!-- Título de la ventana -->
+    <text x="0" y="-130" font-family="'Orbitron', sans-serif" font-size="14" fill="#121212" text-anchor="middle" font-weight="bold">AdsPower - AIGrid</text>
+    
+    <!-- Panel lateral izquierdo -->
+    <rect x="-200" y="-110" width="80" height="260" fill="#1A1A1A"/>
+    
+    <!-- Iconos del panel lateral -->
+    <rect x="-180" y="-90" width="40" height="40" rx="5" ry="5" fill="#00FFFF" opacity="0.3"/>
+    <rect x="-180" y="-30" width="40" height="40" rx="5" ry="5" fill="#00FFFF" opacity="0.3"/>
+    <rect x="-180" y="30" width="40" height="40" rx="5" ry="5" fill="#00FFFF" opacity="0.3"/>
+    <rect x="-180" y="90" width="40" height="40" rx="5" ry="5" fill="#00FFFF" opacity="0.3"/>
+    
+    <!-- Área principal -->
+    <rect x="-110" y="-100" width="300" height="240" rx="5" ry="5" fill="#1A1A1A"/>
+    
+    <!-- Perfiles de herramientas -->
+    <g>
+      <!-- Perfil 1 -->
+      <rect x="-90" y="-80" width="80" height="80" rx="5" ry="5" fill="#001F3F" stroke="#00FFFF" stroke-width="1"/>
+      <text x="-50" y="-40" font-family="'Poppins', sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle">Blackbox AI</text>
+      <circle cx="-50" cy="-10" r="15" fill="#00FFFF" opacity="0.5"/>
+      
+      <!-- Perfil 2 -->
+      <rect x="10" y="-80" width="80" height="80" rx="5" ry="5" fill="#001F3F" stroke="#00FF7F" stroke-width="1"/>
+      <text x="50" y="-40" font-family="'Poppins', sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle">Midjourney</text>
+      <circle cx="50" cy="-10" r="15" fill="#00FF7F" opacity="0.5"/>
+      
+      <!-- Perfil 3 -->
+      <rect x="110" y="-80" width="80" height="80" rx="5" ry="5" fill="#001F3F" stroke="#7D3C98" stroke-width="1"/>
+      <text x="150" y="-40" font-family="'Poppins', sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle">Chat GPT</text>
+      <circle cx="150" cy="-10" r="15" fill="#7D3C98" opacity="0.5"/>
+      
+      <!-- Perfil 4 -->
+      <rect x="-90" y="20" width="80" height="80" rx="5" ry="5" fill="#001F3F" stroke="#00FFFF" stroke-width="1"/>
+      <text x="-50" y="60" font-family="'Poppins', sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle">Leonardo AI</text>
+      <circle cx="-50" cy="90" r="15" fill="#00FFFF" opacity="0.5"/>
+      
+      <!-- Perfil 5 -->
+      <rect x="10" y="20" width="80" height="80" rx="5" ry="5" fill="#001F3F" stroke="#00FF7F" stroke-width="1"/>
+      <text x="50" y="60" font-family="'Poppins', sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle">Canva Pro</text>
+      <circle cx="50" cy="90" r="15" fill="#00FF7F" opacity="0.5"/>
+      
+      <!-- Perfil 6 -->
+      <rect x="110" y="20" width="80" height="80" rx="5" ry="5" fill="#001F3F" stroke="#7D3C98" stroke-width="1"/>
+      <text x="150" y="60" font-family="'Poppins', sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle">Adobe Suite</text>
+      <circle cx="150" cy="90" r="15" fill="#7D3C98" opacity="0.5"/>
+    </g>
+  </g>
+  
+  <!-- Etiqueta de "Listo para usar" -->
+  <g transform="translate(600, 100) rotate(15)">
+    <rect x="-100" y="-20" width="200" height="40" rx="20" ry="20" fill="#00FF7F" opacity="0.8"/>
+    <text x="0" y="5" font-family="'Exo 2', sans-serif" font-size="16" fill="#121212" text-anchor="middle" font-weight="bold">LISTO PARA USAR</text>
+  </g>
+  
+  <!-- Etiqueta de "Acceso Instantáneo" -->
+  <g transform="translate(200, 400) rotate(-10)">
+    <rect x="-100" y="-20" width="200" height="40" rx="20" ry="20" fill="#00FFFF" opacity="0.8"/>
+    <text x="0" y="5" font-family="'Exo 2', sans-serif" font-size="16" fill="#121212" text-anchor="middle" font-weight="bold">ACCESO INSTANTÁNEO</text>
+  </g>
+  
+  <!-- Destellos animados -->
+  <g>
+    <circle cx="150" cy="100" r="3" fill="#FFFFFF">
+      <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="650" cy="350" r="2" fill="#FFFFFF">
+      <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="450" r="2" fill="#FFFFFF">
+      <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="550" cy="150" r="2" fill="#FFFFFF">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>
