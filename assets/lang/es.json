@@ -1,0 +1,481 @@
+{
+  "notifications": {
+    "recent_purchase": {
+      "title": "Compra Reciente",
+      "message": "acaba de comprar",
+      "from": "desde"
+    },
+    "plans": {
+      "premium": "Plan Premium",
+      "basic": "Plan Básico",
+      "premium_enterprise": "Plan Premium Empresarial",
+      "premium_annual": "Plan Premium Anual",
+      "basic_monthly": "Plan Básico Mensual",
+      "premium_plus": "Plan Premium Plus",
+      "basic_quarterly": "Plan Básico Trimestral"
+    },
+    "data": [
+      { "name": "Juan P.", "location": "México", "plan": "premium" },
+      { "name": "María S.", "location": "España", "plan": "basic" },
+      { "name": "Carlos R.", "location": "Argentina", "plan": "premium_plus" },
+      { "name": "Ana L.", "location": "Colombia", "plan": "basic" },
+      { "name": "Roberto M.", "location": "Chile", "plan": "premium" },
+      { "name": "Roberto M.", "location": "Chile", "plan": "premium_enterprise" },
+      { "name": "Laura V.", "location": "Perú", "plan": "premium_annual" },
+      { "name": "Diego F.", "location": "Ecuador", "plan": "basic_monthly" },
+      { "name": "Sofia B.", "location": "Uruguay", "plan": "premium_plus" },
+      { "name": "Gabriel H.", "location": "Paraguay", "plan": "premium_enterprise" },
+      { "name": "Valentina M.", "location": "Bolivia", "plan": "basic_quarterly" },
+      { "name": "Andrés K.", "location": "Venezuela", "plan": "premium_plus" },
+      { "name": "Isabella R.", "location": "Costa Rica", "plan": "premium_annual" },
+      { "name": "Lucas T.", "location": "Panamá", "plan": "basic_monthly" },
+      { "name": "Camila P.", "location": "República Dominicana", "plan": "premium" },
+      { "name": "Mateo S.", "location": "Guatemala", "plan": "basic_quarterly" }
+    ]
+  },
+  "meta": {
+    "title": "AIGrid - Acceso Ilimitado a las Mejores Herramientas  Inteligencia Artificial",
+    "description": "Acceso ilimitado a las mejores herramientas de IA en un solo lugar con un único pago. Potencia tu creatividad, productividad y resultados con AIGrid."
+  },
+  "brand": {
+    "ai": "AI",
+    "grid": "Grid"
+  },
+  "nav": {
+    "inicio": "Inicio",
+    "planes": "Planes",
+    "beneficios": "Beneficios",
+    "testimonios": "Testimonios",
+    "contacto": "Contacto",
+    "comprar": "Comienza Ahora ⚡️",
+    "herramientas": "Herramientas IA"
+  },
+  "hero": {
+    "title_start": "Acceso Ilimitado a las Mejores",
+    "title_highlight": "Herramientas de Inteligencia Artificial",
+    "title_end": "en un Solo Lugar.",
+    "subtitle": "Potencia tu creatividad, productividad y resultados con AIGrid",
+    "cta": "¡Quiero Mi Acceso YA! 🚀",
+    "access_message": "Recibe acceso inmediato en AdsPower con perfiles listos para trabajar desde el primer minuto."
+  },
+  "beneficios": {
+    "title": "Beneficios",
+      "exclusive": "Exclusivos",
+    "subtitle": "Descubre por qué AIGrid es la mejor opción para potenciar tu creatividad y productividad",
+    "whatsapp": {
+      "title": "📲 Grupo Empresarial WhatsApp",
+      "description": "Únase a nuestra comunidad empresarial exclusiva para intercambiar conocimientos y recibir asistencia técnica especializada de nuestro equipo de expertos."
+    },
+    "facilidad": {
+      "title": "🎯 Facilidad de Uso",
+      "description": "Todas las herramientas vienen listas y preconfiguradas para tu comodidad, sin necesidad de conocimientos técnicos avanzados."
+    },
+    "ilimitado": {
+      "title": "🔓 Uso Ilimitado",
+      "description": "Disfruta acceso ilimitado a todas las herramientas IA premium sin restricciones de uso ni costos adicionales ocultos."
+    },
+    "actualizaciones": {
+      "title": "🚀 Actualizaciones Constantes",
+      "description": "Recibe nuevas funcionalidades y herramientas regularmente, sin costos adicionales, manteniéndote siempre a la vanguardia."
+    },
+    "soporte_tecnico": {
+      "title": "🎧 Soporte Técnico Personalizado",
+      "description": "Atención inmediata y personalizada para resolver cualquier inquietud o problema técnico que puedas tener."
+    },
+    "acceso_rapido": {
+      "title": "⚡️ Acceso Rápido con AdsPower",
+      "description": "Comienza a trabajar de inmediato, sin esperas ni configuraciones adicionales, todo listo desde el primer momento."
+    },
+    "rendimiento": {
+      "title": "Rendimiento Óptimo",
+      "description": "Cada herramienta está configurada para un rendimiento óptimo."
+    },
+    "soporte": {
+      "title": "Soporte Técnico",
+      "description": "Asistencia personalizada para resolver cualquier duda o problema."
+    }
+  },
+  "planes": {
+    "title": {
+      "prefix": "Planes",
+      "highlight": "Flexibles",
+      "suffix": ""
+    },
+    "subtitle": "Elige el plan que mejor se adapte a tus necesidades y comienza a potenciar tu creatividad con las mejores herramientas de IA.",
+    "mensual": {
+      "title": "1 Mes",
+      "precio": "$30",
+      "moneda": "USD",
+      "caracteristicas": [
+        "Acceso a todas las herramientas premium",
+        "Soporte técnico personalizado",
+        "Acceso al grupo exclusivo de WhatsApp",
+        "Perfiles configurados en AdsPower",
+        "Actualizaciones gratuitas"
+      ],
+      "cta": "Comprar Ahora",
+      "cta_whatsapp": "Negociar por WhatsApp 📲"
+    },
+    "trimestral": {
+      "title": "3 Meses",
+      "precio": "$75",
+      "moneda": "USD",
+      "ahorro": "Ahorras 20%",
+      "precio_regular": "$90",
+      "etiqueta": "RECOMENDADO",
+      "caracteristicas": [
+        "Acceso a todas las herramientas premium",
+        "Soporte técnico prioritario",
+        "Acceso al grupo exclusivo de WhatsApp",
+        "Perfiles configurados en AdsPower",
+        "Actualizaciones gratuitas"
+      ],
+      "cta": "Comprar Ahora",
+      "cta_whatsapp": "Negociar por WhatsApp 📲"
+    },
+    "semestral": {
+      "title": "6 Meses",
+      "precio": "$120",
+      "moneda": "USD",
+      "ahorro": "Ahorras 35%",
+      "precio_regular": "$180",
+      "caracteristicas": [
+        "Acceso a todas las herramientas premium",
+        "Soporte técnico VIP",
+        "Acceso al grupo exclusivo de WhatsApp",
+        "Perfiles configurados en AdsPower",
+        "Actualizaciones gratuitas",
+        "Acceso a nuevas herramientas sin costo adicional"
+      ],
+      "cta": "Comprar Ahora",
+      "cta_whatsapp": "Negociar por WhatsApp 📲"
+    }
+  },
+
+  "herramientas": {
+    "title": {
+      "prefix": "Herramientas de", 
+      "highlight": "Inteligencia Artificial."
+    },
+    "subtitle": "Accede a las mejores herramientas de inteligencia artificial en un solo lugar, sin complicaciones ni instalaciones.",
+    "categorias": {
+      "todas": "Todas las Herramientas",
+      "asistencia": "Asistencia IA",
+      "codigo": "Código y Desarrollo",
+      "imagenes": "Generación de Imágenes",
+      "video-creacion": "Creación de Video",
+      "video-edicion": "Edición de Video",
+      "audio": "Herramientas de Audio",
+      "diseno": "Diseño de Contenido",
+      "marketing": "Marketing y Análisis",
+      "recursos": "Recursos Digitales",
+      "contenido": "Contenido Digital",
+      "entretenimiento": "Entretenimiento"
+    },
+    "items": {
+      "chatgpt": {
+        "nombre": "ChatGPT",
+        "descripcion": "Asistente IA avanzado para redacción, respuestas y creatividad"
+      },
+      "claude": {
+        "nombre": "Claude",
+        "descripcion": "Asistente IA con capacidad de análisis profundo y contextual"
+      },
+      "quillbot": {
+        "nombre": "QuillBot",
+        "descripcion": "Herramienta de parafraseo y mejora de textos con IA"
+      },
+      "blackbox": {
+        "nombre": "Blackbox AI",
+        "descripcion": "Asistente de programación con autocompletado inteligente"
+      },
+      "operator": {
+        "nombre": "Operator AI",
+        "descripcion": "Automatización de tareas de desarrollo con IA"
+      },
+      "midjourney": {
+        "nombre": "Midjourney Web",
+        "descripcion": "Generador de imágenes de alta calidad con IA"
+      },
+      "leonardo": {
+        "nombre": "Leonardo AI",
+        "descripcion": "Creación de ilustraciones y arte digital con IA"
+      },
+      "ideogram": {
+        "nombre": "Ideogram AI",
+        "descripcion": "Generador de conceptos visuales e ideas creativas"
+      },
+      "hailuo": {
+        "nombre": "Hailuo Video AI",
+        "descripcion": "Creación de videos con IA a partir de texto"
+      },
+      "sora": {
+        "nombre": "Sora (OpenAI)",
+        "descripcion": "Generación de videos realistas con IA avanzada"
+      },
+      "runway": {
+        "nombre": "Runway ML",
+        "descripcion": "Edición y generación de video con modelos de IA"
+      },
+      "heygen": {
+        "nombre": "HeyGen",
+        "descripcion": "Creación de videos con avatares digitales realistas"
+      },
+      "capcut": {
+        "nombre": "CapCut Pro",
+        "descripcion": "Editor de video profesional con funciones de IA"
+      },
+      "clipchamp": {
+        "nombre": "Clipchamp",
+        "descripcion": "Editor de video en línea con plantillas y recursos"
+      },
+      "renderforest": {
+        "nombre": "Renderforest AI",
+        "descripcion": "Creación de videos con plantillas y asistencia IA"
+      },
+      "motionarray": {
+        "nombre": "MotionArray",
+        "descripcion": "Plantillas y recursos premium para edición de video"
+      },
+      "editorpack": {
+        "nombre": "Editor Pack + Plantillas",
+        "descripcion": "Recursos específicos para edición digital rápida"
+      },
+      "fishaudio": {
+        "nombre": "Fish Audio",
+        "descripcion": "Generación y edición de audio con IA"
+      },
+      "musicfy": {
+        "nombre": "Musicfy IA",
+        "descripcion": "Creación de música personalizada con IA"
+      },
+      "adobepodcast": {
+        "nombre": "Adobe Podcast",
+        "descripcion": "Edición y mejora de audio para podcasts con IA"
+      },
+      "canva": {
+        "nombre": "Canva Pro",
+        "descripcion": "Plataforma de diseño gráfico con plantillas y recursos"
+      },
+      "gamma": {
+        "nombre": "Gamma App",
+        "descripcion": "Creación de presentaciones con asistencia de IA"
+      },
+      "adobeexpress": {
+        "nombre": "Adobe Express",
+        "descripcion": "Herramienta de diseño rápido con plantillas y IA"
+      },
+      "placeit": {
+        "nombre": "PlaceIt by Envato",
+        "descripcion": "Mockups y plantillas para branding y marketing"
+      },
+      "photoshop": {
+        "nombre": "Adobe Photoshop",
+        "descripcion": "Software profesional de edición de imágenes con IA"
+      },
+      "lightroom": {
+        "nombre": "Adobe Lightroom",
+        "descripcion": "Edición y organización de fotografías con IA"
+      },
+      "acrobat": {
+        "nombre": "Adobe Acrobat",
+        "descripcion": "Edición y gestión de documentos PDF"
+      },
+      "spyhorus": {
+        "nombre": "Spyhorus",
+        "descripcion": "Análisis de competencia y tendencias en marketing"
+      },
+      "adspy": {
+        "nombre": "AdSpy",
+        "descripcion": "Herramienta para espiar anuncios de la competencia"
+      },
+      "adheart": {
+        "nombre": "Adheart",
+        "descripcion": "Análisis de anuncios en redes sociales"
+      },
+      "adsparo": {
+        "nombre": "Adsparo",
+        "descripcion": "Optimización de campañas publicitarias"
+      },
+      "vidiq": {
+        "nombre": "VidIQ",
+        "descripcion": "Optimización de contenido para YouTube"
+      },
+      "droptool": {
+        "nombre": "Droptool",
+        "descripcion": "Herramienta para análisis de productos y tendencias"
+      },
+      "freepik": {
+        "nombre": "Freepik",
+        "descripcion": "Recursos gráficos y plantillas premium"
+      },
+      "flaticon": {
+        "nombre": "Flaticon",
+        "descripcion": "Iconos y vectores personalizables"
+      },
+      "vecteezy": {
+        "nombre": "Vecteezy",
+        "descripcion": "Vectores, ilustraciones y recursos gráficos"
+      },
+      "envato": {
+        "nombre": "Envato Elements",
+        "descripcion": "Biblioteca completa de recursos creativos"
+      },
+      "slideshare": {
+        "nombre": "SlideShare",
+        "descripcion": "Plataforma para compartir presentaciones"
+      },
+      "scribd": {
+        "nombre": "Scribd",
+        "descripcion": "Biblioteca digital de libros y documentos"
+      },
+      "everand": {
+        "nombre": "Everand PDF Audio",
+        "descripcion": "Conversión de PDF a audio con voces naturales"
+      },
+      "crunchyroll": {
+        "nombre": "Crunchyroll",
+        "descripcion": "Plataforma de streaming de anime y contenido asiático"
+      }
+    },
+    "acceso_ilimitado": "Acceso Ilimitado"
+  },
+
+  "adspower": {
+    "title": {
+      "prefix": "Acceso",
+      "highlight": "Instantáneo",
+      "suffix": "y Listo para Trabajar"
+    },
+    "description": "Olvídate de instalaciones complejas y configuraciones tediosas. Al adquirir nuestros servicios, recibirás acceso directo en AdsPower, con todos los perfiles y herramientas listas y configuradas para comenzar inmediatamente. ¡Ahorra tiempo, dinero y esfuerzo!",
+    "features": {
+      "config": {
+        "title": "Configuración Inmediata",
+        "description": "Sin necesidad de instalar software ni configurar cuentas manualmente."
+      },
+      "profiles": {
+        "title": "Perfiles Optimizados",
+        "description": "Cada herramienta está configurada para un rendimiento óptimo."
+      },
+      "support": {
+        "title": "Soporte Técnico",
+        "description": "Asistencia personalizada para resolver cualquier duda o problema."
+      }
+    }
+  },
+
+  
+  "whatsapp": {
+    "message": "Saludos, me interesa obtener información sobre los servicios profesionales de AIGrid"
+  },
+  "testimonios": {
+    "title": {
+      "prefix": "Lo Que Dicen",
+      "highlight": "Nuestros Usuarios"
+
+    },
+    "subtitle": "Descubre cómo AIGrid ha transformado la forma en que nuestros usuarios trabajan con herramientas de IA",
+    "items": [
+      {
+        "name": "Carlos Rodríguez",
+        "role": "Gerente de Marketing Digital",
+        "text": "AIGrid ha simplificado increíblemente mi flujo de trabajo. Tener todas las herramientas de IA en un solo lugar me ha ahorrado incontables horas."
+      },
+      {
+        "name": "María Sánchez",
+        "role": "Creadora de Contenido",
+        "text": "La calidad de las herramientas y el soporte técnico son excepcionales. Es la mejor inversión que he hecho para mi creación de contenido."
+      },
+      {
+        "name": "Juan Pérez",
+        "role": "Emprendedor",
+        "text": "La relación calidad-precio es inmejorable. Acceso a todas estas herramientas premium por este precio es increíble."
+      }
+    ]
+  },
+  "faq": {
+    "title": {
+      "prefix": "Preguntas",
+      "highlight": "Frecuentes"
+    },
+    "subtitle": "Encuentra respuestas a las preguntas comunes sobre AIGrid y nuestros servicios.",
+    "items": [
+      {
+        "question": "¿Cómo obtengo acceso a las herramientas?",
+        "answer": "Una vez que completes tu compra, recibirás acceso inmediato a todas las herramientas a través de AdsPower con perfiles preconfigurados."
+      },
+      {
+        "question": "¿Necesito instalar algo?",
+        "answer": "No, la mayoría de las herramientas son basadas en web y funcionan directamente a través de AdsPower. Proporcionamos guías detalladas de configuración para todo."
+      },
+      {
+        "question": "¿Qué tipo de soporte ofrecen?",
+        "answer": "Brindamos soporte técnico personalizado a través de nuestro grupo exclusivo de WhatsApp, donde puedes obtener ayuda con cualquier pregunta o problema."
+      },
+      {
+        "question": "¿Puedo actualizar mi plan más adelante?",
+        "answer": "Sí, puedes actualizar a un plan más largo en cualquier momento. Prorratearemos el tiempo restante en tu plan actual."
+      },
+      {
+        "question": "¿Qué métodos de pago aceptan?",
+        "answer": "Aceptamos múltiples métodos de pago incluyendo tarjetas de crédito/débito, PayPal, transferencia bancaria y criptomonedas para tu comodidad."
+      },
+      {
+        "question": "¿Ofrecen alguna garantía?",
+        "answer": "Sí, ofrecemos una garantía de satisfacción de 7 días. Si no estás completamente satisfecho, te reembolsaremos tu compra sin hacer preguntas."
+      },
+      {
+        "question": "¿Las herramientas son compatibles con todos los dispositivos?",
+        "answer": "Nuestras herramientas funcionan en Windows, Mac y Linux a través de AdsPower. Algunas herramientas también tienen versiones móviles disponibles."
+      },
+      {
+        "question": "¿Con qué frecuencia se actualizan las herramientas?",
+        "answer": "Actualizamos constantemente nuestras herramientas para incluir las últimas funcionalidades y mejoras. Todas las actualizaciones están incluidas en tu compra sin costo adicional."
+      },
+      {
+        "question": "¿Puedo usar las herramientas en múltiples dispositivos?",
+        "answer": "Sí, puedes acceder a tus herramientas en hasta 2 dispositivos simultáneamente con tu cuenta de AdsPower."
+      }
+    ]
+  },
+  "footer": {
+    "servicios": {
+      "title": "Servicios Destacados",
+      "blackbox": "Blackbox AI",
+      "midjourney": "Midjourney Web",
+      "chatgpt": "Chat GPT",
+      "sora": "Sora",
+      "leonardo": "Leonardo AI",
+      "adobe": "Adobe Suite"
+    },
+    "enlaces": {
+      "title": "Enlaces Rápidos",
+      "inicio": "Inicio",
+      "herramientas": "Herramientas",
+      "planes": "Planes",
+      "beneficios": "Beneficios",
+      "testimonios": "Testimonios",
+      "faq": "Preguntas Frecuentes"
+    },
+    
+    "logo": {
+      "ai": "AI",
+      "grid": "Grid"
+    },
+    "description": "Potenciando tu creatividad y productividad con las mejores herramientas de IA en un solo lugar.",
+    "contacto": {
+      "title": "Contacto",
+      "whatsapp": "WhatsApp",
+      "email": "Correo"
+    },
+    "legal": {
+      "title": "Legal",
+      "terminos": "Términos y Condiciones",
+      "privacidad": "Política de Privacidad",
+      "cookies": "Política de Cookies",
+      "aviso": "Aviso Legal"
+    },
+    "copyright": "© 2025 AIGrid. Todos los derechos reservados.",
+    "design": "Diseñado con ❤️ por AIGrid"
+  }
+}
